@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="custom.css">
-    <link rel="stylesheet" href="blueimp-gallery.css">
+    <link rel="stylesheet" href="blueimp-gallery.min.css">
   <!-- body: start -->
   <body>
     <!-- navigation bar: start -->
@@ -66,44 +66,41 @@
           <!-- button col 1: start: Internship info -->
           <div class="col-md-12"> 
             <button type="button" class="btn-lg" data-toggle="collapse" data-target="#internship">Internships</button>
-            <div id="internship" class="row collapse">
+            <div id="internship" class="row collapse in">
               <!-- col 1a: start: Internship picture gallery -->
               <div class="col-md-3">
                 <h2 class="section-header">NASA</h2>
                 <div style="text-align: justified;">
                   <ul>
-                      <li><p>I'm currently a freshman Computer Science major at The University of Texas at Austin. My passions include programming, reading, and spending time with family.</p></li>
+                      <li><p>Derp</p></li>
                   </ul>
                 </div>
               </div>
               <!-- col 1a: end -->
               <!-- col 1b: start: Internship stuff -->
               <div class="col-md-9">
-                  <!-- The Gallery as inline carousel, can be positioned anywhere on the page -->
-                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls blueimp-gallery-carousel">
-                        <div class="slides"></div>
-                        <h3 class="title"></h3>
-                        <a class="prev">‹</a>
-                        <a class="next">›</a>
-                        <a class="close">x</a>
-                        <a class="play-pause"></a>
-                        <ol class="indicator"></ol>
-                    </div>
-                  <!-- LIST OF ALL IMAGES -->
-                  <div id="links">
-                    <button type="button" class="btn-lg">Gallery View</button><em class="hidden-lg" style="color:#fff;">&nbsp;&nbsp;Swipe up or down to close</em>  
-                    <a href="backpacking.jpg" title="Backpacking in Savage Gulf, TN" data-gallery> </a>
-                    <a href="office.jpg" title="Office view @ MSFC" data-gallery> </a>
-                    <a href="certificate.jpg" title="Internship Certificate" data-gallery> </a>
+                  <div id="blueimp-image-carousel" class="blueimp-gallery blueimp-gallery-carousel blueimp-gallery-display blueimp-gallery-playing blueimp-gallery-controls" style="display: block;">
+                    <div class="slides" style="width: 75000px;"></div>
+                    <h3 class="title">NASA Adventures</h3>
+                    <a class="prev">‹</a>
+                    <a class="next">›</a>
+                    <a class="play-pause"></a>
+                    <ol class="indicator"></ol>
                   </div>
-              </div>
-              <!-- col 1b: end -->
-            </div> <!--end of row-->
+                                                <!-- LIST OF ALL IMAGES -->
+                                                <div id="links"> 
+                                                  <a href="backpacking.jpg" title="Backpacking in Savage Gulf, TN" data-gallery> </a>
+                                                  <a href="office.jpg" title="Office view @ MSFC" data-gallery> </a>
+                                                  <a href="certificate.jpg" title="Internship Certificate" data-gallery> </a>
+                                                </div>
+                                                <!-- LIST OF ALL IMAGES -->
+                <!-- col 1b: end -->
+              </div> <!--end of row-->
           <!-- button col 1: end -->
           <!-- button col 2: start: Project info -->     
          <div class="col-md-12"> 
             <button type="button" class="btn-lg" data-toggle="collapse" data-target="#projects">Projects</button>
-            <div id="projects" class="row collapse top-buffer">
+            <div id="projects" class="row collapse top-buffer in">
               <!-- col 2a: start: Internship picture gallery -->
               <div class="col-md-6">
                 <h2 class="section-header"><a href="https://github.com/tireymorris/StockFeed">Smartwatch Stock Ticker</a></h2>
@@ -141,8 +138,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script src="blueimp-gallery.min.js"></script>
 
-    <!-- Script below enables smooth animation when clicking nav buttons -->
     <script>
+    <!-- Script below enables smooth animation when clicking nav buttons --> 
         $(function() {
             $('a[href*=#]:not([data-toggle="tab"])').click(function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -164,6 +161,14 @@
 });
     </script>
     <script>
+      blueimp.Gallery(document.getElementById('links').getElementsByTagName('a'),
+        {
+          container: '#blueimp-image-carousel',
+          carousel: true
+        }
+      );
+    </script>
+    <script>
       document.getElementById('links').onclick = function (event) {
       event = event || window.event;
       var target = event.target || event.srcElement,
@@ -172,14 +177,7 @@
           links = this.getElementsByTagName('a');
       blueimp.Gallery(links, options);};
     </script>
-    <script>
-      blueimp.Gallery(document.getElementById('links').getElementsByTagName('a'),
-        {
-          container: '#blueimp-gallery-carousel',
-          carousel: true
-        }
-      );
-</script>
+    
      
 </body>
 <!-- body: end -->
