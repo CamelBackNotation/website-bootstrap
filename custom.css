@@ -1,0 +1,60 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #222;
+}
+h1 {
+	color: #128128;
+	font-weight: bold;
+}
+h2,h3{
+	color: #999;
+}
+p {
+	color: #999;
+	font-style: sans-serif;
+}
+.btn-lg {
+	color:#128128;
+	background-color: #222;
+	border-color: #000;
+	position: inherit;
+}
+.btn-lg:hover, 
+.btn-lg:focus {
+	color:#128128;
+	background-color:#111;
+	border-color: #000;
+}
+.contact {
+	color: #999;
+}
+.container {
+	width: 100%;
+}
+.dropdown-backdrop {
+	position: static;
+}
+.jumbotron {
+    margin: 0px;
+    padding: 0px;
+    background-image: url(MSFC_smaller.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #d3d3d3;
+    text-shadow: black 0.3em 0.3em 0.3em;
+}
+.list-items {
+	font-size: x-large;
+	color: #999;
+}
+.navbar-brand {
+	font-weight: bold;
+}
+.section-header {
+	text-align: center;
+}
+.top-buffer {
+	margin-top: 30px;
+}
